@@ -18,18 +18,7 @@ export default function App() {
 
   return (
     <>
-      <NetworkBackground
-        speed={0.5}
-        density={50}
-        color={color}
-        glow={0.6}
-        particleSize={2}
-      />
-      <h1
-        style={{ position: 'relative', color: '#ffffff', textAlign: 'center' }}
-      >
-        Welcome
-      </h1>
+      <NetworkBackground />
     </>
   );
 }
