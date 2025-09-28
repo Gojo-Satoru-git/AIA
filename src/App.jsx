@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import NetworkBackground from './Components/NetworkBackground';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 export default function App() {
 
   return (
     <>
-      <NetworkBackground speed={2}/>
+      <Header />
+      <p>Hellloooo</p>
+      <Footer />
     </>
   );
 }
