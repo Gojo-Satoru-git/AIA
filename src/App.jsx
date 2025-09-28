@@ -4,7 +4,7 @@ export default function App() {
 
   return (
     <>
-      <NetworkBackground speed={2}/>
+      <h1>Hello</h1>
     </>
   );
 }
