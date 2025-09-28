@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
         
         <div className={styles.copyright}>
-          <p className={styles.copyrightText}>© 2024 AI Association. All rights reserved.</p>
+          <p className={styles.copyrightText}>© 2025 AI Association. All rights reserved.</p>
         </div>
       </div>
     </footer>
