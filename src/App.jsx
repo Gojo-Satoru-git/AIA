@@ -6,7 +6,7 @@ export default function App() {
 
   return (
     <>
-      <Header />
+      <Header page={'Home'} />
       <p>Hellloooo</p>
       <Footer />
     </>

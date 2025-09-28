@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Header.module.css';
 
-const Header = () => {
+const Header = ({ page }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -21,14 +21,14 @@ const Header = () => {
           
           {/* Desktop Navigation */}
           <nav className={styles.nav}>
-            <a className={styles.navLink} href="#">Home</a>
-            <a className={styles.navLink} href="#">Projects</a>
-            <a className={styles.navLink} href="#">Symposium</a>
-            <a className={styles.navLink} href="#">Gallery</a>
-            <a className={styles.navLinkActive} href="#">People</a>
-            <a className={styles.navLink} href="#">Placements</a>
-            <a className={styles.navLink} href="#">Events</a>
-            <a className={styles.navLink} href="#">Achievements</a>
+            <a className={ page === 'Home' ? styles.navLinkActive :  styles.navLink } href="#">Home</a>
+            <a className={page === 'Projects' ? styles.navLinkActive :  styles.navLink} href="#">Projects</a>
+            <a className={page === 'Symposium' ? styles.navLinkActive :  styles.navLink} href="#">Symposium</a>
+            <a className={page === 'Gallery' ? styles.navLinkActive :  styles.navLink} href="#">Gallery</a>
+            <a className={page === 'People' ? styles.navLinkActive :  styles.navLink} href="#">People</a>
+            <a className={page === 'Placements' ? styles.navLinkActive :  styles.navLink} href="#">Placements</a>
+            <a className={page === 'Events' ? styles.navLinkActive :  styles.navLink} href="#">Events</a>
+            <a className={page === 'Achievements' ? styles.navLinkActive :  styles.navLink} href="#">Achievements</a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -46,14 +46,16 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.mobileNavOpen : ''}`}>
-          <a className={styles.mobileNavLink} href="#" onClick={toggleMobileMenu}>Home</a>
-          <a className={styles.mobileNavLink} href="#" onClick={toggleMobileMenu}>Projects</a>
-          <a className={styles.mobileNavLink} href="#" onClick={toggleMobileMenu}>Symposium</a>
-          <a className={styles.mobileNavLink} href="#" onClick={toggleMobileMenu}>Gallery</a>
-          <a className={`${styles.mobileNavLink} ${styles.mobileNavLinkActive}`} href="#" onClick={toggleMobileMenu}>People</a>
-          <a className={styles.mobileNavLink} href="#" onClick={toggleMobileMenu}>Placements</a>
-          <a className={styles.mobileNavLink} href="#" onClick={toggleMobileMenu}>Events</a>
-          <a className={styles.mobileNavLink} href="#" onClick={toggleMobileMenu}>Achievements</a>
+          <a className={`${styles.mobileNavLink} ${ page === "Home" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Home</a>
+          <a className={`${styles.mobileNavLink} ${ page === "Projects" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Projects</a>
+          <a className={`${styles.mobileNavLink} ${ page === "Symposium" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Symposium</a>
+          <a className={`${styles.mobileNavLink} ${ page === "Gallery" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Gallery</a>
+          <a className={`${styles.mobileNavLink} ${ page === "People" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>People</a>
+          <a className={`${styles.mobileNavLink} ${ page === "Placements" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Placements</a>
+          <a className={`${styles.mobileNavLink} ${ page === "Events" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Events</a>
+          <a className={`${styles.mobileNavLink} ${ page === "Achievements" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Achievements</a>
+
+          
         </div>
       </div>
     </header>
