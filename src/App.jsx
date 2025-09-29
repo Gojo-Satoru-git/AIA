@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 import Home from './Pages/Home/Home';
+import People from './Pages/People/People';
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
         <Route path="/projects" element={<div>Projects Page</div>} />
         <Route path="/symposium" element={<div>Symposium Page</div>} />
         <Route path="/gallery" element={<div>Gallery Page</div>} />
-        <Route path="/people" element={<div>People Page</div>} />
+  <Route path="/people" element={<People />} />
         <Route path="/placements" element={<div>Placements Page</div>} />
         <Route path="/events" element={<div>Events Page</div>} />
         <Route path="/achievements" element={<div>Achievements Page</div>} />
