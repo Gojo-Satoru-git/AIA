@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
-const Header = ({ page }) => {
+const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -21,14 +22,14 @@ const Header = ({ page }) => {
           
           {/* Desktop Navigation */}
           <nav className={styles.nav}>
-            <a className={ page === 'Home' ? styles.navLinkActive :  styles.navLink } href="#">Home</a>
-            <a className={page === 'Projects' ? styles.navLinkActive :  styles.navLink} href="#">Projects</a>
-            <a className={page === 'Symposium' ? styles.navLinkActive :  styles.navLink} href="#">Symposium</a>
-            <a className={page === 'Gallery' ? styles.navLinkActive :  styles.navLink} href="#">Gallery</a>
-            <a className={page === 'People' ? styles.navLinkActive :  styles.navLink} href="#">People</a>
-            <a className={page === 'Placements' ? styles.navLinkActive :  styles.navLink} href="#">Placements</a>
-            <a className={page === 'Events' ? styles.navLinkActive :  styles.navLink} href="#">Events</a>
-            <a className={page === 'Achievements' ? styles.navLinkActive :  styles.navLink} href="#">Achievements</a>
+            <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to="/">Home</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to="/projects">Projects</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to="/symposium">Symposium</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to="/gallery">Gallery</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to="/people">People</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to="/placements">Placements</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to="/events">Events</NavLink>
+            <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to="/achievements">Achievements</NavLink>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -46,16 +47,14 @@ const Header = ({ page }) => {
 
         {/* Mobile Navigation */}
         <div className={`${styles.mobileNav} ${isMobileMenuOpen ? styles.mobileNavOpen : ''}`}>
-          <a className={`${styles.mobileNavLink} ${ page === "Home" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Home</a>
-          <a className={`${styles.mobileNavLink} ${ page === "Projects" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Projects</a>
-          <a className={`${styles.mobileNavLink} ${ page === "Symposium" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Symposium</a>
-          <a className={`${styles.mobileNavLink} ${ page === "Gallery" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Gallery</a>
-          <a className={`${styles.mobileNavLink} ${ page === "People" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>People</a>
-          <a className={`${styles.mobileNavLink} ${ page === "Placements" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Placements</a>
-          <a className={`${styles.mobileNavLink} ${ page === "Events" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Events</a>
-          <a className={`${styles.mobileNavLink} ${ page === "Achievements" ? styles.mobileNavLinkActive : null}`} href="#" onClick={toggleMobileMenu}>Achievements</a>
-
-          
+          <NavLink className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`} to="/" onClick={toggleMobileMenu}>Home</NavLink>
+          <NavLink className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`} to="/projects" onClick={toggleMobileMenu}>Projects</NavLink>
+          <NavLink className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`} to="/symposium" onClick={toggleMobileMenu}>Symposium</NavLink>
+          <NavLink className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`} to="/gallery" onClick={toggleMobileMenu}>Gallery</NavLink>
+          <NavLink className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`} to="/people" onClick={toggleMobileMenu}>People</NavLink>
+          <NavLink className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`} to="/placements" onClick={toggleMobileMenu}>Placements</NavLink>
+          <NavLink className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`} to="/events" onClick={toggleMobileMenu}>Events</NavLink>
+          <NavLink className={({ isActive }) => `${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`} to="/achievements" onClick={toggleMobileMenu}>Achievements</NavLink>
         </div>
       </div>
     </header>
