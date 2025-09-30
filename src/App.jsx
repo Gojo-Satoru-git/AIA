@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home';
 import People from './Pages/People/People';
 import Projects from './Pages/Projects/Projects';
 import Placements from './Pages/Placements/Placements';
+import Events from './Pages/Events/Events';
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
         <Route path="/gallery" element={<div>Gallery Page</div>} />
         <Route path="/people" element={<People />} />
         <Route path="/placements" element={<Placements />} />
-        <Route path="/events" element={<div>Events Page</div>} />
+        <Route path="/events" element={<Events />} />
         <Route path="/achievements" element={<div>Achievements Page</div>} />
       </Routes>
       <Footer />

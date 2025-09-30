@@ -1,0 +1,71 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+.header h1 {
+  font-size: 2.25rem;
+  margin: 0;
+  font-weight: 800;
+}
+.header p {
+  margin-top: 12px;
+  color: #475569;
+  max-width: 60ch;
+}
+.grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2,6,23,0.6);
+  z-index: 60;
+  padding: 20px;
+}
+.modal {
+  width: 100%;
+  max-width: 860px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(2,6,23,0.5);
+  position: relative;
+}
+.modalMedia {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center;
+}
+.modalBody {
+  padding: 20px;
+}
+.close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+.date { color: var(--primary, #1173d4); font-weight: 600; }
+.title { margin: 8px 0 12px; font-size: 1.5rem; font-weight: 800; }
+.description { color: #475569; }
