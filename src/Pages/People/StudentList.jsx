@@ -57,10 +57,19 @@ const StudentList = () => {
   const years = ['All', '1st Year', '2nd Year', '3rd Year', '4th Year'];
   const recordsPerPage = isMobile ? 20 : 60;
 
+  // Map year labels to numbers
+  const yearMap = {
+    'All': 'All',
+    '1st Year': 1,
+    '2nd Year': 2,
+    '3rd Year': 3,
+    '4th Year': 4
+  };
+
   const filteredStudents =
     selectedYear === 'All'
       ? students
-      : students.filter((student) => student.year === parseInt(selectedYear));
+      : students.filter((student) => student.year === yearMap[selectedYear]);
 
   const totalPages = Math.ceil(filteredStudents.length / recordsPerPage);
   const startIndex = (currentPage - 1) * recordsPerPage;
@@ -78,18 +87,6 @@ const StudentList = () => {
             key={year}
             onClick={() => setSelectedYear(year)}
             className={selectedYear === year ? styles.filterButtonActive : styles.filterButton}
-            onMouseEnter={(e) => {
-              if (selectedYear !== year) {
-                e.target.style.backgroundColor = 'rgba(17, 115, 212, 0.2)';
-                e.target.style.color = '#1173d4';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (selectedYear !== year) {
-                e.target.style.backgroundColor = 'transparent';
-                e.target.style.color = '#6b7280';
-              }
-            }}
           >
             {year}
           </button>
@@ -105,7 +102,6 @@ const StudentList = () => {
       {totalPages > 1 && (
         <div className={styles.pagination}>
           <button
-            style={currentPage === 1 ? {} : {}} 
             className={currentPage === 1 ? styles.pageButtonDisabled : styles.pageButton}
             onClick={() => setCurrentPage(currentPage - 1)}
             disabled={currentPage === 1}
