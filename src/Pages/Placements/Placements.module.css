@@ -1,0 +1,60 @@
+.main {
+  padding: 3rem 1rem;
+  background: var(--background-light, #f6f7f8);
+  color: var(--text-color, #0f1724);
+  min-height: calc(100vh - 120px);
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+.lead {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1,1fr);
+}
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2,1fr); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3,1fr); } }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(14, 30, 37, 0.06);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(14,30,37,0.09); }
+.image { height: 160px; background-size: cover; background-position: center; }
+.cardBody { padding: 1rem; }
+.company { margin: 0; font-size: 1.125rem; font-weight: 700; }
+.meta { margin: 0.25rem 0; color: #6b7280; font-size: 0.95rem; }
+.cta { margin-top: 0.5rem; background: rgba(17,115,212,0.08); color: #1173d4; border: none; padding: 0.5rem 0.75rem; border-radius: 8px; cursor: pointer; }
+.cta:hover { background: #1173d4; color: white; }
+
+.overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.6); display:flex; align-items:center; justify-content:center; padding:1rem; z-index:50; }
+.dialog { background: white; border-radius: 8px; max-width: 900px; width:100%; padding:1rem; position:relative; }
+.close { position:absolute; top:8px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer; }
+.dialogGrid { display:grid; gap:1rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .dialogGrid { grid-template-columns: 360px 1fr; } }
+.dialogImage { background-size: cover; background-position: center; height: 240px; border-radius:6px; }
+.dialogBody { padding:0.5rem 1rem; }
+.description { color:#374151; margin-top:0.75rem; }
+
+@media (prefers-color-scheme: dark) {
+  .main { background: var(--background-dark, #101922); color: #e6eef8; }
+  .card { background: #08101a; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+  .meta, .lead { color: #9ca3af; }
+  .dialog { background: #07101a; color: #e6eef8; }
+}

@@ -1,14 +1,14 @@
 import React from 'react'
 
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import StudentList from './StudentList'
 import AlumniList from './AlumniList'
+import Header from '../../Components/Header'
+import Footer from '../../Components/Footer'
 
 function People() {
   return (
     <>
-    <Header page={'People'} />
+    <Header />
     <StudentList />
     <AlumniList />
     <Footer />

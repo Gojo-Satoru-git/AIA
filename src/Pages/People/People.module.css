@@ -1,0 +1,219 @@
+:root {
+  --bg-light: #f6f7f8;
+  --bg-dark: #101922;
+  --text-light: #ffffff;
+  --text-dark: #101922;
+  --muted: #6b7280;
+  --primary: #1173d4;
+}
+
+.main {
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.thead {
+  background-color: #f9fafb;
+}
+
+.th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.tr {
+  border-top: 1px solid #e5e7eb;
+}
+
+.tdPrimary {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.tdSecondary {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.paginationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.resultsText {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.iconButton[disabled] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.pageButton {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.pageButton[aria-current="page"],
+.pageButton.active {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.pageList {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  max-width: 480px;
+  overflow-x: auto;
+}
+
+.pageButton:hover {
+  background-color: rgba(17,115,212,0.06);
+}
+
+.active {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.ellipsis {
+  color: #9ca3af;
+}
+
+.alumniBox {
+  border: 2px dashed #d1d5db;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  text-align: center;
+  background: white;
+}
+
+.leftControls {
+  display: flex;
+  align-items: center;
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pageSizeLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.pageSizeSelect {
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.35rem;
+  border: 1px solid #e5e7eb;
+  background: white;
+}
+
+.alumniTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.alumniText {
+  margin-top: 0.5rem;
+  color: #6b7280;
+}
+
+/* Dark theme support (optional) */
+@media (prefers-color-scheme: dark) {
+  .main {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+  }
+
+  .tableWrapper {
+    background-color: #0f1724;
+    border-color: #374151;
+  }
+
+  .th { color: #9ca3af; }
+  .tdPrimary { color: #e5e7eb; }
+  .tdSecondary { color: #9ca3af; }
+  .resultsText { color: #9ca3af; }
+  .alumniBox { border-color: #374151; background: #0b1220; }
+}
