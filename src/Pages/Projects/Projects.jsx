@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import styles from './Projects.module.css';
 import projectsData from '../../data/projects.json';
+import { Projectcard } from '../../Components/projectCard/projectcard';
 
 const PAGE_SIZE_OPTIONS = [6, 9, 12];
 
@@ -32,19 +33,7 @@ export default function Projects() {
 
         <div className={styles.grid}>
           {pageItems.map((proj, i) => (
-            <article
-              key={i}
-              className={styles.card}
-              style={{
-                backgroundImage: proj.image ? `url(${proj.image})` : undefined,
-              }}
-            >
-              <div className={styles.gradient} />
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{proj.title}</h3>
-                <p className={styles.cardSubtitle}>{proj.desc}</p>
-              </div>
-            </article>
+            <Projectcard i={i} image={proj.image} title={proj.title} desc={proj.desc}/>
           ))}
         </div>
 
