@@ -1,7 +1,7 @@
 .main {
   padding: 3rem 1rem;
-  background: var(--background-light, #f6f7f8);
-  color: var(--text-color, #0f1724);
+  background: var(--background-light, #5287bd);
+  color: var(--text-color, #647a9d);
   min-height: calc(100vh - 120px);
 }
 .container {
@@ -13,6 +13,7 @@
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 2.5rem;
+  
 }
 
 /* responsive grid */
@@ -124,7 +125,7 @@
 
 /* small adjustments */
 @media (prefers-color-scheme: dark) {
-  .main { background: var(--background-dark, #101922); color: #e6eef8; }
+  .main { background: var(--background-dark, #efeeeb); color: #262728; }
   .cardSubtitle { color: rgba(255,255,255,0.9); }
-  .iconBtn, .pageBtn { color: #cbd5e1; }
+  .iconBtn, .pageBtn { color: #42464c; }
 }

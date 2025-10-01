@@ -2,7 +2,8 @@ import React, { useMemo, useState } from 'react';
 import styles from './Projects.module.css';
 import projectsData from '../../data/projects.json';
 import { Projectcard } from '../../Components/projectCard/projectcard';
-
+import {Box, Card, Dialog, Typography} from "@mui/material"
+import { Newprojectcard } from '../../Components/projectCard/newprojectcard';
 const PAGE_SIZE_OPTIONS = [6, 9, 12];
 
 export default function Projects() {
@@ -29,13 +30,21 @@ export default function Projects() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>Our Projects</h2>
-
+        <Box sx={{
+        textAlign: "center",
+       p:2
+      }}>
+        <Typography variant="h4" sx={{fontWeight:"bold",color:"black"}} >Our Project</Typography>
+        <Typography variant="h6" sx={{ maxWidth: "700px", mx: "auto",color: "#03353c",}}>Explore our cutting-edge AI research projects and innovative solutions across various domains</Typography>
+        </Box>
         <div className={styles.grid}>
           {pageItems.map((proj, i) => (
-            <Projectcard i={i} image={proj.image} title={proj.title} desc={proj.desc}/>
+             <Newprojectcard image={proj.image} title={proj.title} decs={proj.desc} year={proj.year} nos={proj.nos}/>
           ))}
         </div>
+        <Dialog>
+          
+        </Dialog>
 
         <div className={styles.pager}>
           <button
