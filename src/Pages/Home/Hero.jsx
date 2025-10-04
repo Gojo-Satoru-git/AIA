@@ -46,10 +46,10 @@ export default function Hero() {
   const togglePause = () => setPaused((prev) => !prev);
 
   return (
-    <div className="p-24">
+    <div className="px-4 sm:px-6 md:px-10 lg:px-24 py-10 sm:py-12 md:py-16">
       <div className="relative w-full overflow-hidden rounded-2xl">
         <div
-          className="flex transition-transform duration-700 ease-in-out h-full"
+          className="flex transition-transform duration-700 ease-in-out h-64 sm:h-80 md:h-96 lg:h-[32rem] xl:h-[44rem]"
           style={{
             width: `${slides.length * 100}%`,
             transform: `translateX(-${current * (100 / slides.length)}%)`,
