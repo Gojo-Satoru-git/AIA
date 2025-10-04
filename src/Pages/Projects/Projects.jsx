@@ -69,7 +69,7 @@ export default function Projects() {
             onClick={prev}
             disabled={page === 1}
             aria-label="Previous"
-          ></button>
+          > ‹ </button>
 
           <div className={styles.pageList}>
             {Array.from({ length: totalPages }).map((_, i) => {

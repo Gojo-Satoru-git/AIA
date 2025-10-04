@@ -11,13 +11,13 @@ export function Newprojectcard({ image, title, decs, year, nos, tech, feature })
     return (
         <>
             <Card sx={{
-                maxWidth: "32rem", borderRadius: "10px", transition: "all 0.3s ease-in-out", "&:hover": {
+                maxWidth: "30rem", borderRadius: "10px", transition: "all 0.3s ease-in-out", "&:hover": {
                     transform: "translateY(-5px) scale(1.05)", // lift & zoom
                     boxShadow: "0 8px 20px rgba(0,0,0,0.2)",   // shadow effect
                 },
             }}>
                 <CardActionArea onClick={() => setdetails(true)}>
-                    <CardMedia component='img' height="150" image={image} alt="project-img" />
+                    <CardMedia component='img' image={image} alt="project-img" sx={{ maxHeight: 170, width: "100%", }} />
                     <CardContent sx={{ padding: 2 }}>
                         <Typography variant="body1" sx={{ fontWeight: "bold", "&:hover": { color: "red" } }}>{title}</Typography>
                         <Typography variant="caption" sx={{ color: "diasbled" }}>{decs}</Typography>
@@ -129,11 +129,29 @@ export function Newprojectcard({ image, title, decs, year, nos, tech, feature })
 
 
                 </DialogContent>
-                <DialogActions sx={{display:"flex",justifyContent:"flex-start",p:"1rem", gap: "0.5rem"}}>
-                    
-                    <Button component="a" href="https://github.com/Naveen032006" startIcon={<GitHubIcon sx={{paddingLeft:"0.5rem",paddingRight:".5rem"}}/>} variant="contained" sx={{backgroundColor:"#fa443bff", textTransform: "none",padding:"0.5rem"}} >View Code</Button>
-                    <Button component="a" href="https://github.com/Naveen032006" startIcon={<OpenInNewIcon sx={{paddingLeft:"0.5rem",paddingRight:".5rem"}}/>} variant="outlined" sx={{color:"black",textTransform: "none",padding:"0.5rem"}}>Live Demo</Button>
-                    
+                <DialogActions sx={{ display: "flex", justifyContent: "flex-start", p: "1rem", gap: "0.5rem" }}>
+
+                    <Button
+                        component="a"
+                        href="https://github.com/Naveen032006"
+                        startIcon={<GitHubIcon sx={{ px: "0.5rem" }} />}
+                        variant="contained"
+                        sx={{
+                            backgroundColor: "#fa443bff",
+                            textTransform: "none",
+                            padding: "0.2rem 0.5rem",
+                            "& .MuiButton-startIcon > *": { fontSize: "35px !important" },
+                        }}
+                    >
+                        View Code
+                    </Button>                   
+                     <Button component="a" href="https://github.com/Naveen032006" startIcon={<OpenInNewIcon sx={{ paddingLeft: "0.5rem", paddingRight: ".5rem" }} />} variant="outlined" sx={{
+      color: "black",
+      textTransform: "none",
+      padding: "0.2rem 0.5rem",
+      "& .MuiButton-startIcon > *": { fontSize: "35px !important" },
+    }}>Live Demo</Button>
+
                 </DialogActions>
 
             </Dialog>
