@@ -1,6 +1,6 @@
 .main {
   padding: 3rem 1rem;
-  background: var(--background-light, #5287bd);
+  background: var(--background-light, #efeeeb);
   color: var(--text-color, #647a9d);
   min-height: calc(100vh - 120px);
 }
