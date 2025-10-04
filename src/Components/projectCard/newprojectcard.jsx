@@ -13,11 +13,12 @@ export function Newprojectcard({ image, title, decs, year, nos, tech, feature })
             <Card sx={{
                 maxWidth: "30rem", borderRadius: "10px", transition: "all 0.3s ease-in-out", "&:hover": {
                     transform: "translateY(-5px) scale(1.05)", // lift & zoom
-                    boxShadow: "0 8px 20px rgba(0,0,0,0.2)",   // shadow effect
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.2)", 
+                     // shadow effect
                 },
             }}>
                 <CardActionArea onClick={() => setdetails(true)}>
-                    <CardMedia component='img' image={image} alt="project-img" sx={{ maxHeight: 170, width: "100%", }} />
+                    <CardMedia component='img' image={image} alt="project-img" sx={{ maxHeight: 200, width: "100%", }} />
                     <CardContent sx={{ padding: 2 }}>
                         <Typography variant="body1" sx={{ fontWeight: "bold", "&:hover": { color: "red" } }}>{title}</Typography>
                         <Typography variant="caption" sx={{ color: "diasbled" }}>{decs}</Typography>
