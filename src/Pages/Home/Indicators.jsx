@@ -7,7 +7,7 @@ export default function Indicators({ slides, current, setCurrent }) {
           key={i}
           onClick={() => setCurrent(i)}
           className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full cursor-pointer transition-colors ${
-            i === current ? "bg-white" : "bg-gray-400"
+            i === current ? "bg-black" : "bg-gray-300"
           }`}
         ></div>
       ))}
