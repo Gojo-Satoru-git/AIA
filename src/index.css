@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+	--font-heading: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	--font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Apply fonts globally */
+html,body,#root{height:100%;}
+body{
+	font-family: var(--font-body);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+h1,h2,h3,h4,h5,h6, .hero-title{
+	font-family: var(--font-heading);
+}
+
+/* Small utility for making headings stand out */
+.heading-accent{ color: var(--primary, #1173d4); }
