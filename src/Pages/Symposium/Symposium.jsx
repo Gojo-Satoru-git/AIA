@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import data from '../../data/symposium.json';
-import FeatureCard from '../../Components/FeatureCard';
+import FeatureCard from '../../Components/FeaureCard/FeatureCard';
 import styles from './Symposium.module.css';
 
 export default function Symposium() {
