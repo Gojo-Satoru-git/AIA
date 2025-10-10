@@ -1,11 +1,11 @@
 .main {
   padding: 3rem 1rem;
-  background: var(--background-light, #5287bd);
+  background: var(--background-light, #efeeeb);
   color: var(--text-color, #647a9d);
   min-height: calc(100vh - 120px);
 }
 .container {
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 .heading {
@@ -19,7 +19,7 @@
 /* responsive grid */
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   grid-template-columns: repeat(1, 1fr);
 }
 @media (min-width: 640px) {

@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import styles from './Projects.module.css';
 import projectsData from '../../data/projects.json';
 import { Projectcard } from '../../Components/projectCard/projectcard';
-import { Box, Card, Dialog, Typography } from '@mui/material';
+import { Box, Card, Dialog, DialogTitle, Typography } from '@mui/material';
 import { Newprojectcard } from '../../Components/projectCard/newprojectcard';
 const PAGE_SIZE_OPTIONS = [6, 9, 12];
 
@@ -55,10 +55,13 @@ export default function Projects() {
               decs={proj.desc}
               year={proj.year}
               nos={proj.nos}
+              tech={proj.tech}
+              feature={proj.feature}
             />
+            
           ))}
         </div>
-        <Dialog></Dialog>
+        
 
         <div className={styles.pager}>
           <button
@@ -66,7 +69,7 @@ export default function Projects() {
             onClick={prev}
             disabled={page === 1}
             aria-label="Previous"
-          ></button>
+          >  </button>
 
           <div className={styles.pageList}>
             {Array.from({ length: totalPages }).map((_, i) => {
