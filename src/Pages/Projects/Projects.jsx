@@ -36,9 +36,7 @@ export default function Projects() {
             p: 2,
           }}
         >
-          <Typography variant="h4" sx={{ fontWeight: 'bold', color: 'black' }}>
-            Our Project
-          </Typography>
+          <h1>Our Projects</h1>
           <Typography
             variant="h6"
             sx={{ maxWidth: '700px', mx: 'auto', color: '#03353c' }}

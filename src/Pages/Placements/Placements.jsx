@@ -36,9 +36,7 @@ export default function Placements() {
             p: 2,
           }}
         >
-          <Typography variant="h4" sx={{ fontWeight: 'bold', color: 'black' }}>
-            Placements
-          </Typography>
+          <h1>Placements</h1>
           <Typography
             variant="h6"
             sx={{ maxWidth: '700px', mx: 'auto', color: '#03353c' }}
