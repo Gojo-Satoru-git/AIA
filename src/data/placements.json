@@ -1,32 +1,56 @@
 [
   {
-    "company": "Tech Innovators Inc.",
-    "student": "Alex Johnson",
-    "package": "$120,000",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA15BUkBmZs2oTYhvk9l782zXzO0Tt37o485sq62W_N2v9fTdRjXbK9wPtvU7x2fw-gds2fhSg9dAtVC4XwCMy5Lg1LEUioWVU4qKKBAvDMZ_YhszRxBp-iwOG4Mvg6oR7AixFq3v3uwvEeGlBnsTnGrLzEE1n5Zbc2vqWknZaYoLeqXo1yQVlatuX8PpZ3bejSzy8I87pOcBai9jcimIl20VmcTedDqH5vS28LLnb9nLM1XLPtap5MMgaCjHUZV__M6KPk5LOycEU"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    "company": "Google",
+    "role": "Software Engineer - AI",
+    "name": "Sarah Johnson",
+    "location": "Mountain View, CA",
+    "year": "2024",
+    "salary": "$120K"
   },
   {
-    "company": "Data Dynamics Corp.",
-    "student": "Sarah Chen",
-    "package": "$115,000",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAJYKAD91kZhnl3GN5ekkbnPNUEmfMhzX19zG1v3VEIM-vwP1ViXjqc8fMqcS-6Vmas3mwYwB4z275EX23gXUbVzUpioHNHbo_q3BZn7WyLkjACR9j8Ps83tiqTxl8QJqyNJlqu0-Y0Bs9hbUfrSZ0r5yzKoOwpsDdra9bEBavslLQYLXwee-br2gtcTCGUFi_BvGwRCRTRLaYJiMLzO09p52GnPEVcavAXXbFtZ4TB5_z_azVvQJv6FnWLcUwgx0Xf8fXbVM4g3SQ"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    "company": "Microsoft",
+    "role": "AI Research Engineer",
+    "name": "David Chen",
+    "location": "Redmond, WA",
+    "year": "2024",
+    "salary": "$115K"
   },
   {
-    "company": "AI Solutions Ltd.",
-    "student": "David Lee",
-    "package": "$130,000",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAzrEVePnjOCmg5ytKu_eEhU6vO7Xe2EMlQupsltKLz6wMpY6jNdZfSWhc0H2LkzerE1ZH8Nw8jwCECJh-Ham8Kjn8g8vVzQ6FYs65lMwCXI8-jSRHzi4hcB1jTa4OsnO6YQtfHhzKq15oC69fgGJXa40Lsrag4xQI2WAAiwPCl_VHrhO2uAdn31Z5OozAXck8MAq7N51a_c0dypJRxE6bSz7TiAtym22ZxFVLSa8tVUoxUvS-F5TBwJ_lrj6XWny62xOatceHUaJ8"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg",
+    "company": "OpenAI",
+    "role": "ML Engineer",
+    "name": "Emily Rodriguez",
+    "location": "San Francisco, CA",
+    "year": "2024",
+    "salary": "$130K"
   },
   {
-    "company": "Machine Learning Group",
-    "student": "Emily White",
-    "package": "$125,000",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBuXGnzkieyIhiEIThpDHb4LiKVwRTXWxRS3uwNkh9s6-UBTgiRj0YnbA4XloL90xFkaELaxS5VJuehCkvwNQUS4KULukML5wbCeLHWUZtqcdoymDGo2_OtBRFci30WWOO3s112h9UQWOi_zesW9t21trATZz0LZWdQS2kmXTW3ggzBQQqnu_IchAJelbpo2Hytxl32ob1jl-CYViy8dNdWMnO9CYS2NQuBu83HzDwhLUnPn7EineTjHfZtpylB2nhMCPfhsIzquUw"
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    "company": "Amazon",
+    "role": "Applied Scientist",
+    "name": "Michael Park",
+    "location": "Seattle, WA",
+    "year": "2024",
+    "salary": "$110K"
   },
   {
-    "company": "Cognitive Systems Inc.",
-    "student": "Michael Brown",
-    "package": "$110,000",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCPiW-7Ob7kVNYPt9rgdGvyMAm_lZ0NuGsszMggwRiVR9RED0qjiBZFlNV3zhg3w_ZuN9-VDD3rPfmNmUGgjPkgtZ1B342GRCSnXMIHWFV7T3MrT0ihl3AA8pArYFKNPd3ZzlLTUx2mSpGU6Q7r31cm6LSx-yHxpzVkD8JVEsc3N1jM6Kv5nHLzV29Vm_daz7wACLoDBD2uo4JvDXZ8s2gxsTnetCgkqc8gwfw7Okl26pr4VRKeWHqOEYd47hihDe5bE5WTHVitJqk"
+    "logo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Nvidia_logo.svg",
+    "company": "NVIDIA",
+    "role": "Deep Learning Engineer",
+    "name": "Lisa Wang",
+    "location": "Santa Clara, CA",
+    "year": "2024",
+    "salary": "$125K"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
+    "company": "Tesla",
+    "role": "Autopilot Engineer",
+    "name": "James Thompson",
+    "location": "Palo Alto, CA",
+    "year": "2024",
+    "salary": "$118K"
   }
 ]

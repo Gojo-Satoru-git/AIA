@@ -5,6 +5,62 @@ import { Box, Typography } from '@mui/material';
 import { Placementcard } from '../../Components/placementCard/placementcard';
 const PAGE_SIZE_OPTIONS = [6, 9, 12];
 export default function Placements() {
+  const jobs = [
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    company: "Google",
+    role: "Software Engineer - AI",
+    name: "Sarah Johnson",
+    location: "Mountain View, CA",
+    year: "2024",
+    salary: "$120K",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    company: "Microsoft",
+    role: "AI Research Engineer",
+    name: "David Chen",
+    location: "Redmond, WA",
+    year: "2024",
+    salary: "$115K",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg",
+    company: "OpenAI",
+    role: "ML Engineer",
+    name: "Emily Rodriguez",
+    location: "San Francisco, CA",
+    year: "2024",
+    salary: "$130K",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    company: "Amazon",
+    role: "Applied Scientist",
+    name: "Michael Park",
+    location: "Seattle, WA",
+    year: "2024",
+    salary: "$110K",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/en/0/0c/Nvidia_logo.svg",
+    company: "NVIDIA",
+    role: "Deep Learning Engineer",
+    name: "Lisa Wang",
+    location: "Santa Clara, CA",
+    year: "2024",
+    salary: "$125K",
+  },
+  {
+    logo: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
+    company: "Tesla",
+    role: "Autopilot Engineer",
+    name: "James Thompson",
+    location: "Palo Alto, CA",
+    year: "2024",
+    salary: "$118K",
+  },
+];
   const PLACEMENTS = useMemo(
     () => (Array.isArray(placementsData) ? placementsData : []),
     [],
@@ -45,36 +101,11 @@ export default function Placements() {
           </Typography>
         </Box>
         <div className={styles.grid}>
-          {PLACEMENTS.map((p, i) => (
-            <article
-              key={i}
-              className={styles.card}
-              onClick={() => setSelected(p)}
-            >
-              <div
-                className={styles.image}
-                style={{
-                  backgroundImage: p.image ? `url(${p.image})` : undefined,
-                }}
-              />
-              <div className={styles.cardBody}>
-                <h3 className={styles.company}>{p.company}</h3>
-                <p className={styles.meta}>Student: {p.student}</p>
-                <p className={styles.meta}>Package: {p.package}</p>
-                <button
-                  className={styles.cta}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelected(p);
-                  }}
-                >
-                  View Details
-                </button>
-              </div>
-            </article>
+          {pageItems.map((p, i) => (
+            <Placementcard logo={p.logo} company={p.company} role={p.role} name={p.name} location={p.location} year={p.year} salary={p.salary}/>
+            
           ))}
         </div>
-        <Placementcard/>
 
         {selected && (
           <div className={styles.overlay} onClick={() => setSelected(null)}>
