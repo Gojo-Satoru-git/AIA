@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(2,6,23,0.6);
+  background: rgba(2, 6, 23, 0.6);
   z-index: 60;
   padding: 20px;
 }
@@ -45,7 +45,7 @@
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 24px 80px rgba(2,6,23,0.5);
+  box-shadow: 0 24px 80px rgba(2, 6, 23, 0.5);
   position: relative;
 }
 .modalMedia {
@@ -65,7 +65,17 @@
   background: transparent;
   font-size: 28px;
   cursor: pointer;
+  color: #475569;
 }
-.date { color: var(--primary, #1173d4); font-weight: 600; }
-.title { margin: 8px 0 12px; font-size: 1.5rem; font-weight: 800; }
-.description { color: #475569; }
+.date {
+  color: var(--primary, #1173d4);
+  font-weight: 600;
+}
+.title {
+  margin: 8px 0 12px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.description {
+  color: #475569;
+}

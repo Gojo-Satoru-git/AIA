@@ -1,14 +1,16 @@
 import './Achievementcard.css';
-const Achievementcard = ({ image, title, content, detail, setdetail }) => {
+const Achievementcard = ({ achievement, setdetail }) => {
   return (
     <div
-      className={`card${detail ? ' inactive' : ''}`}
-      onClick={setdetail(!detail)}
+      className={`card`}
+      onClick={() => {
+        setdetail(achievement);
+      }}
     >
       <img
         className="image"
-        src={image}
-        alt={title}
+        src={achievement.image}
+        alt={achievement.title}
         style={{
           color: 'white',
           padding: '2px',
@@ -28,15 +30,9 @@ const Achievementcard = ({ image, title, content, detail, setdetail }) => {
           color: 'white',
         }}
       >
-        <h3 className="header" style={{ fontSize: '25px' }}>
-          {title}
+        <h3 className="header" style={{ fontSize: '150%' }}>
+          {achievement.title}
         </h3>
-        <p
-          className="content"
-          style={{ color: 'lightgray', opacity: '0.6', padding: '5px' }}
-        >
-          {content}
-        </p>
       </div>
     </div>
   );
