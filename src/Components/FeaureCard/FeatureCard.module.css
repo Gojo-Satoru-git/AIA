@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg, #fff);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.card:focus,
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(16,24,40,0.12);
+}
+.media {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center;
+}
+.body { padding: 14px; }
+.subtitle { margin: 0; color: var(--primary, #1173d4); font-weight: 600; }
+.title { margin: 8px 0 6px; font-size: 1.125rem; font-weight: 700; color: var(--text, #0f172a); }
+.desc { margin: 0; color: #475569; font-size: 0.95rem; }
