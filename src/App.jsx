@@ -9,6 +9,7 @@ import Placements from './Pages/Placements/Placements';
 import Events from './Pages/Events/Events';
 import Symposium from './Pages/Symposium/Symposium';
 import Gallery from './Pages/Gallery/Gallery';
+import Achievements from './Pages/Achievements/Achievements';
 import GalleryView from './Pages/Gallery/GalleryView';
 
 export default function App() {
@@ -23,7 +24,7 @@ export default function App() {
         <Route path="/people" element={<People />} />
         <Route path="/placements" element={<Placements />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/achievements" element={<div>Achievements Page</div>} />
+        <Route path="/achievements" element={<Achievements />} />
         <Route path="/gallery/:folderTitle" element={<GalleryView />} />
       </Routes>
 
