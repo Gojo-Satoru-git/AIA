@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import data from '../../data/symposium.json';
+import data from '../../server/data/symposium.json';
 import FeatureCard from '../../Components/FeaureCard/FeatureCard';
 import styles from './Symposium.module.css';
 
