@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import folders from '../../data/folders';
+import folders from '../../server/data/folders';
 import styles from './GalleryView.module.css';
 
 const GalleryView = () => {
@@ -12,38 +12,50 @@ const GalleryView = () => {
 
   const { folderTitle } = useParams();
 
-  const folder = folders.find(f => f.title.toLowerCase() === folderTitle?.toLowerCase());
+  const folder = folders.find(
+    (f) => f.title.toLowerCase() === folderTitle?.toLowerCase(),
+  );
   const images = folder ? folder.images : [];
 
-  const handleImageClick = index => setSelectedImageIndex(index);
+  const handleImageClick = (index) => setSelectedImageIndex(index);
   const handleCloseModal = () => setSelectedImageIndex(null);
 
-  const handleModalClick = e => {
+  const handleModalClick = (e) => {
     if (e.target === e.currentTarget) handleCloseModal();
   };
 
-  const handlePrevImage = e => {
-    e.stopPropagation();
-    setSelectedImageIndex(prev => (prev > 0 ? prev - 1 : images.length - 1));
-  };
+  const handlePrevImage = useCallback(
+    (e) => {
+      e.stopPropagation();
+      setSelectedImageIndex((prev) =>
+        prev > 0 ? prev - 1 : images.length - 1,
+      );
+    },
+    [images.length],
+  );
 
-  const handleNextImage = e => {
-    e.stopPropagation();
-    setSelectedImageIndex(prev => (prev < images.length - 1 ? prev + 1 : 0));
-  };
-
-  const handleKeyDown = e => {
-    if (selectedImageIndex !== null) {
-      if (e.key === 'ArrowLeft') handlePrevImage(e);
-      else if (e.key === 'ArrowRight') handleNextImage(e);
-      else if (e.key === 'Escape') handleCloseModal();
-    }
-  };
+  const handleNextImage = useCallback(
+    (e) => {
+      e.stopPropagation();
+      setSelectedImageIndex((prev) =>
+        prev < images.length - 1 ? prev + 1 : 0,
+      );
+    },
+    [images.length],
+  );
 
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (selectedImageIndex !== null) {
+        if (e.key === 'ArrowLeft') handlePrevImage(e);
+        else if (e.key === 'ArrowRight') handleNextImage(e);
+        else if (e.key === 'Escape') handleCloseModal();
+      }
+    };
+
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImageIndex]);
+  }, [selectedImageIndex, handlePrevImage, handleNextImage]);
 
   if (!folder) {
     return (
@@ -101,7 +113,9 @@ const GalleryView = () => {
 
           <div className={styles.navigationButtons}>
             <button
-              className={`${styles.navButton} ${prevButtonHover ? styles.navButtonHover : ''}`}
+              className={`${styles.navButton} ${
+                prevButtonHover ? styles.navButtonHover : ''
+              }`}
               onClick={handlePrevImage}
               onMouseEnter={() => setPrevButtonHover(true)}
               onMouseLeave={() => setPrevButtonHover(false)}
@@ -109,7 +123,9 @@ const GalleryView = () => {
               ‹
             </button>
             <button
-              className={`${styles.navButton} ${nextButtonHover ? styles.navButtonHover : ''}`}
+              className={`${styles.navButton} ${
+                nextButtonHover ? styles.navButtonHover : ''
+              }`}
               onClick={handleNextImage}
               onMouseEnter={() => setNextButtonHover(true)}
               onMouseLeave={() => setNextButtonHover(false)}

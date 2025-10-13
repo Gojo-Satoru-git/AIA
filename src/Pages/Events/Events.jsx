@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import eventsData from '../../data/events.json';
+import eventsData from '../../server/data/events.json';
 import EventCard from '../../Components/EventCard/EventCard';
 import styles from './Events.module.css';
 
