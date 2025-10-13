@@ -66,14 +66,40 @@ export default function OfficeBearers() {
 
             {/* Title */}
             <div
-              className={`inline-block ${bearer.bgColor} bg-opacity-10 text-gray-800 px-3 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-medium mb-4`}
+              className={`inline-block text-gray-800 px-3 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-medium mb-4`}
+              style={{
+                backgroundColor: (() => {
+                  const map = {
+                    // very light / pastel variants for badges
+                    'bg-teal-400': '#ccfbf1',
+                    teal: '#ccfbf1',
+                    'bg-teal-500': '#99f6e4',
+
+                    'bg-red-400': '#fff1f2',
+                    red: '#fff1f2',
+                    'bg-red-500': '#fee2e2',
+
+                    'bg-purple-400': '#f8f0ff',
+                    purple: '#f8f0ff',
+                    'bg-purple-500': '#f3e8ff',
+
+                    'bg-green-400': '#dcfce7',
+                    green: '#dcfce7',
+                    'bg-green-500': '#bbf7d0',
+                  };
+                  return map[bearer.bgColor] || 'rgba(0,0,0,0.06)';
+                })(),
+                color: '#02131a',
+              }}
             >
               {bearer.position}
             </div>
 
             {/* Description */}
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-center mb-4 sm:mb-6">
-              {bearer.description}
+              {bearer.description && bearer.description !== 'Null'
+                ? bearer.description
+                : ''}
             </p>
           </div>
         ))}
