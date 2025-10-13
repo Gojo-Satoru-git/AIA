@@ -6,7 +6,11 @@
     "name": "Sarah Johnson",
     "location": "Mountain View, CA",
     "year": "2024",
-    "salary": "$120K"
+    "salary": "$120K",
+    "jobtype": "Internship",
+    "cgpa": "8.9",
+    "rollno": "21AIDS032",
+    "specialisation": "Data Analytics"
   },
   {
     "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
@@ -15,7 +19,12 @@
     "name": "David Chen",
     "location": "Redmond, WA",
     "year": "2024",
-    "salary": "$115K"
+    "salary": "$115K",
+    "jobtype": "Internship",
+    "cgpa": "8.9",
+    "rollno": "21AIDS032",
+    "specialisation": "Data Analytics"
+    
   },
   {
     "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg",
@@ -24,7 +33,11 @@
     "name": "Emily Rodriguez",
     "location": "San Francisco, CA",
     "year": "2024",
-    "salary": "$130K"
+    "salary": "$130K",
+    "jobtype": "Internship",
+    "cgpa": "8.9",
+    "rollno": "21AIDS032",
+    "specialisation": "Data Analytics"
   },
   {
     "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
@@ -33,7 +46,11 @@
     "name": "Michael Park",
     "location": "Seattle, WA",
     "year": "2024",
-    "salary": "$110K"
+    "salary": "$110K",
+    "jobtype": "Internship",
+    "cgpa": "8.9",
+    "rollno": "21AIDS032",
+    "specialisation": "Data Analytics"
   },
   {
     "logo": "https://upload.wikimedia.org/wikipedia/en/0/0c/Nvidia_logo.svg",
@@ -42,7 +59,11 @@
     "name": "Lisa Wang",
     "location": "Santa Clara, CA",
     "year": "2024",
-    "salary": "$125K"
+    "salary": "$125K",
+    "jobtype": "Internship",
+    "cgpa": "8.9",
+    "rollno": "21AIDS032",
+    "specialisation": "Data Analytics"
   },
   {
     "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
@@ -51,6 +72,10 @@
     "name": "James Thompson",
     "location": "Palo Alto, CA",
     "year": "2024",
-    "salary": "$118K"
+    "salary": "$118K",
+    "jobtype": "Internship",
+    "cgpa": "8.9",
+    "rollno": "21AIDS032",
+    "specialisation": "Data Analytics"
   }
 ]

@@ -55,7 +55,12 @@ export default function Placements() {
               location={p.location}
               year={p.year}
               salary={p.salary}
+              jobtype={p.jobtype}
+              cgpa={p.cgpa}
+              rollno={p.rollno}
+              specialisation={p.specialisation}
             />
+
           ))}
         </div>
 
@@ -108,9 +113,8 @@ export default function Placements() {
             return (
               <button
                 key={p}
-                className={`${styles.pageBtn} ${
-                  p === page ? styles.active : ''
-                }`}
+                className={`${styles.pageBtn} ${p === page ? styles.active : ''
+                  }`}
                 onClick={() => setPage(p)}
                 aria-current={p === page ? 'page' : undefined}
               >

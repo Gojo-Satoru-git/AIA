@@ -11,7 +11,19 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Grid } from "@mui/material";
 import { useState } from "react";
 
-export function Placementcard({logo,company,role,name,location,year,salary}){
+export function Placementcard({
+  logo,
+  company,
+  role,
+  name,
+  location,
+  year,
+  salary,
+  jobtype,
+  cgpa,
+  rollno,
+  specialisation
+}){
     const [open,setopen]=useState(false);
     return (
         <>
@@ -111,16 +123,16 @@ export function Placementcard({logo,company,role,name,location,year,salary}){
           {/* Header */}
           <DialogTitle sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+              src={logo}
               alt="Microsoft"
               style={{ width: 35 }}
             />
             <Box flexGrow={1}>
               <Typography variant="h6" fontWeight="bold">
-                Microsoft
+                {company}
               </Typography>
               <Typography variant="subtitle1"  color="text.secondary">
-                AI Research Engineer
+                {role}
               </Typography>
             </Box>
             <IconButton onClick={()=>{setopen(false)}} size="small">
@@ -146,7 +158,7 @@ export function Placementcard({logo,company,role,name,location,year,salary}){
                   Name
                 </Typography>
                 <Typography sx={{fontWeight:"bold"}}>
-                  Sarah Johnson
+                  {name}
                 </Typography>
               </Stack >
                <Stack sx={{padding:"0.5rem"}}>
@@ -154,7 +166,7 @@ export function Placementcard({logo,company,role,name,location,year,salary}){
                   CGPA
                 </Typography>
                 <Typography sx={{fontWeight:"bold"}}>
-                  9.2
+                  {cgpa}
                 </Typography>
               </Stack>
             </Grid>
@@ -165,7 +177,7 @@ export function Placementcard({logo,company,role,name,location,year,salary}){
                   Roll Number
                 </Typography>
                 <Typography sx={{fontWeight:"bold"}}>
-                  AI2021001
+                 {rollno}
                 </Typography>
               </Stack>
               <Stack sx={{padding:"0.5rem"}}>
@@ -173,7 +185,7 @@ export function Placementcard({logo,company,role,name,location,year,salary}){
                   Specialization
                 </Typography>
                 <Typography sx={{fontWeight:"bold"}}>
-                  Machine Learning
+                  {specialisation}
                 </Typography>
               </Stack>
             </Grid>
@@ -194,7 +206,7 @@ export function Placementcard({logo,company,role,name,location,year,salary}){
                 <Stack sx={{padding:"0.5rem"}}>
                 <Typography variant="body1" sx={{color:"grey"}}>Package</Typography>
                 <Typography variant="body1" color="green" sx={{fontWeight:700}}>
-                  $115K
+                 {salary}
                 </Typography>
                 </Stack>
               </Box>
@@ -202,7 +214,7 @@ export function Placementcard({logo,company,role,name,location,year,salary}){
                 <CalendarTodayIcon  color="error" fontSize="medium" />
                 <Stack sx={{padding:"0.5rem"}}>
                 <Typography variant="body1" sx={{color:"grey"}}>Placement Year</Typography>
-                <Typography variant="body1" sx={{fontWeight:"bold"}}>2024</Typography>
+                <Typography variant="body1" sx={{fontWeight:"bold"}}>{year}</Typography>
                 </Stack>
               </Box>
             </Grid>
@@ -211,14 +223,14 @@ export function Placementcard({logo,company,role,name,location,year,salary}){
                 <LocationOnIcon fontSize="medium" />
                 <Stack sx={{padding:"0.5rem"}}>
                  <Typography variant="body1" sx={{color:"grey"}}>Location</Typography>
-                <Typography variant="body1" sx={{fontWeight:"bold"}}>Redmond, WA</Typography>
+                <Typography variant="body1" sx={{fontWeight:"bold"}}>{location}</Typography>
                 </Stack>
               </Box>
               <Box display="flex" alignItems="center" gap={1}>
                 <WorkIcon color="info" fontSize="medium" />
                 <Stack sx={{padding:"0.5rem"}}>
                  <Typography variant="body1" sx={{color:"grey"}}>Job Type</Typography>
-                <Typography variant="body1" sx={{fontWeight:"bold"}}>Full-time</Typography>
+                <Typography variant="body1" sx={{fontWeight:"bold"}}>{jobtype}</Typography>
                 </Stack>
               </Box>
             </Grid>
