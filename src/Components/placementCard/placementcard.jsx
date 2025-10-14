@@ -103,7 +103,7 @@ export function Placementcard({
         {/* Salary */}
         <Typography
           variant="h6"
-          sx={{ color: "green", fontWeight: 700, mt: 1 }}
+          sx={{ color: "#1e9304ff", fontWeight: 700, mt: 1 }}
         >
           {salary}
         </Typography>
@@ -205,7 +205,7 @@ export function Placementcard({
                 <AttachMoneyIcon color="success" fontSize="medium" />
                 <Stack sx={{padding:"0.5rem"}}>
                 <Typography variant="body1" sx={{color:"grey"}}>Package</Typography>
-                <Typography variant="body1" color="green" sx={{fontWeight:700}}>
+                <Typography variant="body1" color="#1e9304ff" sx={{fontWeight:700}}>
                  {salary}
                 </Typography>
                 </Stack>
