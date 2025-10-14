@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Udith V",
+    "position": "Chairman",
+    "description": "Blah blah blah Blah blah blah Blah blah blah",
+    "bgColor": "bg-teal-400",
+    "image": "/images/OfficeBearers/Chairman.jpg",
+    "email": "naveenkumar03202006@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/naveenkumar0320/"
+  },
+  {
+    "id": 2,
+    "name": "Thanya Gayathri",
+    "position": "Vice Chairman",
+    "description": "Blah blah blahBlah blah blahBlah blah blah",
+    "bgColor": "bg-red-500",
+    "image": "/images/OfficeBearers/ViceChairman.jpg",
+    "email": "naveenkumar03202006@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/naveenkumar0320/"
+  },
+  {
+    "id": 3,
+    "name": "Rithik Sathish",
+    "position": "General Secretary",
+    "description": "Blah blah blahBlah blah blah",
+    "bgColor": "bg-purple-500",
+    "image": "/images/OfficeBearers/GeneralSecretary.jpg",
+    "email": "naveenkumar03202006@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/naveenkumar0320/"
+  },
+  {
+    "id": 4,
+    "name": "Thirushika S",
+    "position": "Joint Secretary",
+    "description": "Blah blah blahBlah blah blah",
+    "bgColor": "bg-green-500",
+    "image": "/images/OfficeBearers/JointSecretary.jpg",
+    "email": "naveenkumar03202006@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/naveenkumar0320/"
+  },
+  {
+    "id": 5,
+    "name": "Maki Zenin",
+    "position": "Treasurer",
+    "description": "Blah blah blahBlah blah blah",
+    "bgColor": "bg-teal-400",
+    "image": "/images/OfficeBearers/Treasurer.jpg",
+    "email": "naveenkumar03202006@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/naveenkumar0320/"
+  }
+]

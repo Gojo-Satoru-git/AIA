@@ -1,6 +1,6 @@
 import './Achievements.css';
 import Achievementcard from '../../Components/Achievementcard/Achievementcard';
-import AchievementData from '../../data/Achievements.json';
+import AchievementData from '../../server/data/Achievements.json';
 import { useState } from 'react';
 const Achievements = () => {
   const [detail, setdetail] = useState(null);

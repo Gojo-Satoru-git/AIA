@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import styles from './Projects.module.css';
-import projectsData from '../../data/projects.json';
+import projectsData from '../../server/data/projects.json';
 import { Projectcard } from '../../Components/projectCard/projectcard';
 import { Box, Card, Dialog, DialogTitle, Typography } from '@mui/material';
 import { Newprojectcard } from '../../Components/projectCard/newprojectcard';
@@ -46,8 +46,9 @@ export default function Projects() {
           </Typography>
         </Box>
         <div className={styles.grid}>
-          {pageItems.map((proj, i) => (
+          {pageItems.map((proj, idx) => (
             <Newprojectcard
+              key={proj.title || idx}
               image={proj.image}
               title={proj.title}
               decs={proj.desc}
@@ -56,10 +57,8 @@ export default function Projects() {
               tech={proj.tech}
               feature={proj.feature}
             />
-            
           ))}
         </div>
-        
 
         <div className={styles.pager}>
           <button
@@ -67,7 +66,9 @@ export default function Projects() {
             onClick={prev}
             disabled={page === 1}
             aria-label="Previous"
-          >  </button>
+          >
+            {' '}
+          </button>
 
           <div className={styles.pageList}>
             {Array.from({ length: totalPages }).map((_, i) => {

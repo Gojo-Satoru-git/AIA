@@ -1,53 +1,7 @@
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin } from 'lucide-react';
+import bearers from '../../server/data/officeBearers.json';
 
 export default function OfficeBearers() {
-  const bearers = [
-    {
-      name: "Dr. Sarah Chen",
-      title: "Chairman",
-      description:
-        "Leading AI research with 15+ years of experience in machine learning.",
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
-      bgColor: "bg-teal-400",
-      email: "naveenkumar03202006@gmail.com",
-      linkedin: "https://www.linkedin.com/in/naveenkumar0320/",
-    },
-    {
-      name: "Prof. M. Rodriguez",
-      title: "Vice Chairman",
-      description:
-        "Expert in computer vision and robotics, published author of 50+ papers.",
-      image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
-      bgColor: "bg-red-500",
-      email: "mayilvagananezhil@gmail.com",
-      linkedin: "https://www.linkedin.com/in/ezhil-mayil-vaganan-s/",
-    },
-    {
-      name: "Dr. Priya Sharma",
-      title: "General Secretary",
-      description:
-        "Specializes in NLP and AI ethics, former Google Research scientist.",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-      bgColor: "bg-purple-500",
-      email: "praveenchandru1209@gmail.com",
-      linkedin: "https://www.linkedin.com/in/praveen-kumar1209/",
-    },
-    {
-      name: "Alex Thompson",
-      title: "Joint Secretary",
-      description:
-        "Ph.D. in Deep Learning, leads our student outreach and educational programs.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-      bgColor: "bg-green-500",
-      email: "sunthar2736@gmail.com",
-      linkedin: "https://www.linkedin.com/in/rahul-sundarraj-a04860353/",
-    },
-  ];
-
   return (
     <div className="bg-white shadow-2xl rounded-3xl mt-20 sm:mt-40 px-4 sm:px-10 md:px-16 lg:px-32 py-10 sm:py-16 relative">
       {/* Header */}
@@ -112,14 +66,40 @@ export default function OfficeBearers() {
 
             {/* Title */}
             <div
-              className={`inline-block ${bearer.bgColor} bg-opacity-10 text-gray-800 px-3 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-medium mb-4`}
+              className={`inline-block text-gray-800 px-3 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-medium mb-4`}
+              style={{
+                backgroundColor: (() => {
+                  const map = {
+                    // very light / pastel variants for badges
+                    'bg-teal-400': '#ccfbf1',
+                    teal: '#ccfbf1',
+                    'bg-teal-500': '#99f6e4',
+
+                    'bg-red-400': '#fff1f2',
+                    red: '#fff1f2',
+                    'bg-red-500': '#fee2e2',
+
+                    'bg-purple-400': '#f8f0ff',
+                    purple: '#f8f0ff',
+                    'bg-purple-500': '#f3e8ff',
+
+                    'bg-green-400': '#dcfce7',
+                    green: '#dcfce7',
+                    'bg-green-500': '#bbf7d0',
+                  };
+                  return map[bearer.bgColor] || 'rgba(0,0,0,0.06)';
+                })(),
+                color: '#02131a',
+              }}
             >
-              {bearer.title}
+              {bearer.position}
             </div>
 
             {/* Description */}
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-center mb-4 sm:mb-6">
-              {bearer.description}
+              {bearer.description && bearer.description !== 'Null'
+                ? bearer.description
+                : ''}
             </p>
           </div>
         ))}

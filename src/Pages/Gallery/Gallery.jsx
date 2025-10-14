@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import folders from '../../data/folders';
+import folders from '../../server/data/folders';
 import { Link } from 'react-router-dom';
 import styles from './Gallery.module.css';
 
@@ -10,15 +10,15 @@ const Gallery = () => {
   useEffect(() => {
     const intervals = folders.map((folder, folderIndex) => {
       return setInterval(() => {
-        setCurrentImageIndices(prev => ({
+        setCurrentImageIndices((prev) => ({
           ...prev,
-          [folderIndex]: ((prev[folderIndex] || 0) + 1) % folder.images.length
+          [folderIndex]: ((prev[folderIndex] || 0) + 1) % folder.images.length,
         }));
       }, 4000); // Change image every 4 seconds
     });
 
     return () => {
-      intervals.forEach(interval => clearInterval(interval));
+      intervals.forEach((interval) => clearInterval(interval));
     };
   }, []);
 
@@ -49,8 +49,10 @@ const Gallery = () => {
                   alt={`${folder.title} ${imgIndex + 1}`}
                   className={styles.imageSlider}
                   style={{
-                    opacity: (currentImageIndices[index] || 0) === imgIndex ? 1 : 0,
-                    zIndex: (currentImageIndices[index] || 0) === imgIndex ? 1 : 0,
+                    opacity:
+                      (currentImageIndices[index] || 0) === imgIndex ? 1 : 0,
+                    zIndex:
+                      (currentImageIndices[index] || 0) === imgIndex ? 1 : 0,
                   }}
                 />
               ))}
