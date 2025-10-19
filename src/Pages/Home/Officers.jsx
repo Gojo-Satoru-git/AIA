@@ -1,50 +1,58 @@
 import { Mail, Linkedin } from 'lucide-react';
 import bearers from '../../server/data/officeBearers.json';
+import styles from './Officers.module.css';
 
 export default function OfficeBearers() {
+  const getBadgeClass = (bgColor) => {
+    const colorMap = {
+      'bg-teal-400': 'teal',
+      teal: 'teal',
+      'bg-teal-500': 'teal',
+      'bg-red-400': 'red',
+      red: 'red',
+      'bg-red-500': 'red',
+      'bg-purple-400': 'purple',
+      purple: 'purple',
+      'bg-purple-500': 'purple',
+      'bg-green-400': 'green',
+      green: 'green',
+      'bg-green-500': 'green',
+    };
+    return colorMap[bgColor] || 'default';
+  };
+
   return (
-    <div className="bg-white shadow-2xl rounded-3xl mt-20 sm:mt-40 px-4 sm:px-10 md:px-16 lg:px-32 py-10 sm:py-16 relative">
+    <div className={styles.container}>
       {/* Header */}
-      <div className="text-center mb-10 sm:mb-16">
-        <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-          Office Bearers
-        </h1>
-        <p className="text-base sm:text-lg text-gray-600 px-2 sm:px-0">
+      <div className={styles.header}>
+        <h1 className={styles.title}>Office Bearers</h1>
+        <p className={styles.description}>
           Meet the distinguished leaders driving our mission forward
         </p>
       </div>
 
       {/* Bearers Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+      <div className={styles.grid}>
         {bearers.map((bearer, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col items-center justify-between min-h-[460px] sm:min-h-[520px]
-            transform transition-all duration-500 hover:-translate-y-3 hover:shadow-3xl group relative"
-          >
+          <div key={index} className={styles.card}>
             {/* Profile Image */}
-            <div className="relative mb-6">
-              <div
-                className={`w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden ring-4 ring-white shadow-lg transform transition-transform duration-500 group-hover:scale-105`}
-              >
+            <div className={styles.profileImageContainer}>
+              <div className={styles.profileImage}>
                 <img
                   src={bearer.image}
                   alt={bearer.name}
-                  className="w-full h-full object-cover"
+                  className={styles.image}
                 />
               </div>
 
               {/* Icons on hover (always visible on mobile for better UX) */}
-              <div
-                className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-4 
-                opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300"
-              >
+              <div className={styles.socialIcons}>
                 {/* Mail icon */}
                 <a
                   href={`mailto:${bearer.email}`}
-                  className="bg-white rounded-full p-2 sm:p-3 shadow-md hover:shadow-lg transition-all"
+                  className={styles.socialLink}
                 >
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
+                  <Mail className={`${styles.socialIcon} ${styles.mailIcon}`} />
                 </a>
 
                 {/* LinkedIn icon */}
@@ -52,51 +60,29 @@ export default function OfficeBearers() {
                   href={bearer.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white rounded-full p-2 sm:p-3 shadow-md hover:shadow-lg transition-all"
+                  className={styles.socialLink}
                 >
-                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-700" />
+                  <Linkedin
+                    className={`${styles.socialIcon} ${styles.linkedinIcon}`}
+                  />
                 </a>
               </div>
             </div>
 
             {/* Name */}
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 text-center">
-              {bearer.name}
-            </h3>
+            <h3 className={styles.name}>{bearer.name}</h3>
 
             {/* Title */}
             <div
-              className={`inline-block text-gray-800 px-3 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-medium mb-4`}
-              style={{
-                backgroundColor: (() => {
-                  const map = {
-                    // very light / pastel variants for badges
-                    'bg-teal-400': '#ccfbf1',
-                    teal: '#ccfbf1',
-                    'bg-teal-500': '#99f6e4',
-
-                    'bg-red-400': '#fff1f2',
-                    red: '#fff1f2',
-                    'bg-red-500': '#fee2e2',
-
-                    'bg-purple-400': '#f8f0ff',
-                    purple: '#f8f0ff',
-                    'bg-purple-500': '#f3e8ff',
-
-                    'bg-green-400': '#dcfce7',
-                    green: '#dcfce7',
-                    'bg-green-500': '#bbf7d0',
-                  };
-                  return map[bearer.bgColor] || 'rgba(0,0,0,0.06)';
-                })(),
-                color: '#02131a',
-              }}
+              className={`${styles.position} ${
+                styles[getBadgeClass(bearer.bgColor) + 'Badge']
+              }`}
             >
               {bearer.position}
             </div>
 
             {/* Description */}
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed text-center mb-4 sm:mb-6">
+            <p className={styles.description}>
               {bearer.description && bearer.description !== 'Null'
                 ? bearer.description
                 : ''}

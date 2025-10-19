@@ -1,29 +1,35 @@
 // Hero.jsx
-import { useState, useRef, useEffect } from "react";
-import { PauseIcon, PlayIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
-import Slide from "./Slide";
-import Controls from "./Controls";
-import Indicators from "./Indicators";
+import { useState, useRef, useEffect } from 'react';
+import {
+  PauseIcon,
+  PlayIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from '@heroicons/react/24/solid';
+import Slide from './Slide';
+import Controls from './Controls';
+import Indicators from './Indicators';
+import styles from './Hero.module.css';
 
 // Images and corresponding texts
 const slides = [
   {
-    image: "https://picsum.photos/id/1018/1600/800",
-    title: "Future of Artificial Intelligence",
+    image: 'https://picsum.photos/id/1018/1600/800',
+    title: 'Future of Artificial Intelligence',
     subtitle: "Shaping tomorrow's technology today",
-    description: "Explore cutting edge AI research and innovation",
+    description: 'Explore cutting edge AI research and innovation',
   },
   {
-    image: "https://picsum.photos/id/1033/1600/800",
-    title: "AI for Social Good",
-    subtitle: "Technology that makes a difference",
-    description: "Discover how AI can solve global challenges",
+    image: 'https://picsum.photos/id/1033/1600/800',
+    title: 'AI for Social Good',
+    subtitle: 'Technology that makes a difference',
+    description: 'Discover how AI can solve global challenges',
   },
   {
-    image: "https://picsum.photos/id/1037/1600/800",
-    title: "Machine Learning Excellence",
-    subtitle: "Advanced algorithm for real world solutions",
-    description: "Join out community of ML researchers",
+    image: 'https://picsum.photos/id/1037/1600/800',
+    title: 'Machine Learning Excellence',
+    subtitle: 'Advanced algorithm for real world solutions',
+    description: 'Join out community of ML researchers',
   },
 ];
 
@@ -41,15 +47,16 @@ export default function Hero() {
     return () => clearInterval(slideInterval.current);
   }, [paused]);
 
-  const goPrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  const goPrev = () =>
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   const goNext = () => setCurrent((prev) => (prev + 1) % slides.length);
   const togglePause = () => setPaused((prev) => !prev);
 
   return (
-    <div className="px-4 sm:px-6 md:px-10 lg:px-24 py-10 sm:py-12 md:py-16">
-      <div className="relative w-full overflow-hidden rounded-2xl">
+    <div className={styles.container}>
+      <div className={styles.sliderContainer}>
         <div
-          className="flex transition-transform duration-700 ease-in-out h-64 sm:h-80 md:h-96 lg:h-[32rem] xl:h-[44rem]"
+          className={styles.slidesWrapper}
           style={{
             width: `${slides.length * 100}%`,
             transform: `translateX(-${current * (100 / slides.length)}%)`,

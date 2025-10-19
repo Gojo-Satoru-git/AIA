@@ -7,11 +7,34 @@
 	--font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     background-color: #efeeeb;
 }
-html,body,#root{height:100%;}
+html,body,#root{
+	height:100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
 body{
 	font-family: var(--font-body);
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
+	margin: 0;
+	padding: 0;
+}
+
+#root {
+	position: relative;
+	overflow-x: hidden;
+	z-index: 1;
+}
+
+/* Ensure modals render above everything */
+.modal-overlay {
+	z-index: 9999 !important;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+	overflow: hidden;
 }
 
 h1,h2,h3,h4,h5,h6, .hero-title{

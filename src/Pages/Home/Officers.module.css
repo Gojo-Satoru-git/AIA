@@ -1,0 +1,253 @@
+/* Officers.module.css */
+.container {
+  background-color: white;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 1.5rem;
+  margin-top: 5rem;
+  padding: 2.5rem 1rem;
+  position: relative;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #4b5563;
+  padding: 0 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 460px;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-0.75rem);
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4);
+}
+
+.profileImageContainer {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.profileImage {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.card:hover .profileImage {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.socialIcons {
+  position: absolute;
+  bottom: -1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.socialLink {
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.socialIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.mailIcon {
+  color: #374151;
+}
+
+.linkedinIcon {
+  color: #1d4ed8;
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.position {
+  display: inline-block;
+  color: #1f2937;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Position badge colors */
+.tealBadge {
+  background-color: #ccfbf1;
+  color: #02131a;
+}
+
+.redBadge {
+  background-color: #fff1f2;
+  color: #02131a;
+}
+
+.purpleBadge {
+  background-color: #f8f0ff;
+  color: #02131a;
+}
+
+.greenBadge {
+  background-color: #dcfce7;
+  color: #02131a;
+}
+
+.defaultBadge {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: #02131a;
+}
+
+/* Responsive design */
+@media (min-width: 640px) {
+  .container {
+    padding: 2.5rem 2.5rem;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+    padding: 0;
+  }
+  
+  .grid {
+    gap: 2.5rem;
+  }
+  
+  .card {
+    padding: 2rem;
+    min-height: 520px;
+  }
+  
+  .profileImage {
+    width: 10rem;
+    height: 10rem;
+  }
+  
+  .socialLink {
+    padding: 0.75rem;
+  }
+  
+  .socialIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .name {
+    font-size: 1.25rem;
+  }
+  
+  .position {
+    padding: 0.25rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 4rem 8rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .socialIcons {
+    opacity: 0;
+  }
+  
+  .card:hover .socialIcons {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
