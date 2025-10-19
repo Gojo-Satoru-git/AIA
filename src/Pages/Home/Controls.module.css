@@ -1,90 +1,56 @@
 /* Controls.module.css */
+
 .controlsContainer {
+  /* This container will overlay the slider to position the buttons */
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  /* This prevents the container from blocking clicks on the slide content */
+  pointer-events: none; 
 }
 
 .controlButton {
+  /* Common styles for all buttons */
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.5);
+  top: 50%;
+  transform: translateY(-50%); /* This vertically centers the buttons */
+  background-color: rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 50%;
+  color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
-  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 3rem;  /* Fixed width to prevent stretching */
+  height: 3rem; /* Fixed height to prevent stretching */
+  padding: 0;
+  pointer-events: auto; /* Re-enables clicks for the buttons */
+  transition: background-color 0.2s ease;
 }
 
 .controlButton:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.pauseButton {
-  top: 0.5rem;
-  right: 0.5rem;
-  padding: 0.5rem;
-}
-
-.prevButton {
-  top: 50%;
-  left: 0.5rem;
-  transform: translateY(-50%);
-  padding: 0.5rem;
-}
-
-.nextButton {
-  top: 50%;
-  right: 0.5rem;
-  transform: translateY(-50%);
-  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: black;
 }
 
-/* Responsive design */
-@media (min-width: 640px) {
-  .pauseButton {
-    top: 1rem;
-    right: 1rem;
-    padding: 0.75rem;
-  }
-  
-  .prevButton,
-  .nextButton {
-    left: 1rem;
-    right: 1rem;
-    padding: 0.75rem;
-  }
-  
-  .icon {
-    width: 2rem;
-    height: 2rem;
-  }
+/* Specific positioning for each button */
+.pauseButton {
+  left: 50%;
+  /* This combination perfectly centers the middle button */
+  transform: translate(-50%, -50%); 
 }
 
-@media (min-width: 768px) {
-  .pauseButton {
-    padding: 1rem;
-  }
-  
-  .prevButton,
-  .nextButton {
-    padding: 1rem;
-  }
-  
-  .icon {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
+.prevButton {
+  left: 1rem;
+}
+
+.nextButton {
+  right: 1rem;
 }

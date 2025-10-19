@@ -15,7 +15,7 @@
 .slidesWrapper {
   display: flex;
   transition: transform 0.7s ease-in-out;
-  height: 16rem;
+  height: 18rem; /* Increased */
 }
 
 .slide {
@@ -95,34 +95,34 @@
   .container {
     padding: 3rem 1.5rem;
   }
-  
+
   .slidesWrapper {
-    height: 20rem;
+    height: 22rem; /* Increased */
   }
-  
+
   .textOverlay {
     top: 2rem;
     left: 2rem;
     max-width: 24rem;
   }
-  
+
   .slideTitle {
     font-size: 1.25rem;
   }
-  
+
   .slideSubtitle {
     font-size: 1.125rem;
   }
-  
+
   .slideDescription {
     font-size: 1.125rem;
   }
-  
+
   .buttonContainer {
     flex-direction: row;
     gap: 0.5rem;
   }
-  
+
   .button {
     font-size: 1rem;
   }
@@ -132,29 +132,29 @@
   .container {
     padding: 4rem 2.5rem;
   }
-  
+
   .slidesWrapper {
-    height: 24rem;
+    height: 28rem; /* Increased */
   }
-  
+
   .textOverlay {
     top: 4rem;
     left: 4rem;
     max-width: 28rem;
   }
-  
+
   .slideTitle {
     font-size: 3rem;
   }
-  
+
   .slideSubtitle {
     font-size: 1.5rem;
   }
-  
+
   .slideDescription {
     font-size: 1.5rem;
   }
-  
+
   .button {
     font-size: 1.125rem;
     padding: 0.75rem 2rem;
@@ -165,29 +165,29 @@
   .container {
     padding: 2.5rem 6rem;
   }
-  
+
   .slidesWrapper {
-    height: 32rem;
+    height: 36rem; /* Increased */
   }
-  
+
   .textOverlay {
     top: 6rem;
     left: 6rem;
     max-width: 32rem;
   }
-  
+
   .slideTitle {
     font-size: 3.75rem;
   }
-  
+
   .slideSubtitle {
     font-size: 1.875rem;
   }
-  
+
   .slideDescription {
     font-size: 1.875rem;
   }
-  
+
   .button {
     font-size: 1.25rem;
   }
@@ -195,27 +195,27 @@
 
 @media (min-width: 1280px) {
   .slidesWrapper {
-    height: 44rem;
+    height: 48rem; /* Increased */
   }
-  
+
   .textOverlay {
     top: 6rem;
     left: 6rem;
     max-width: 36rem;
   }
-  
+
   .slideTitle {
     font-size: 4.5rem;
   }
-  
+
   .slideSubtitle {
     font-size: 2.25rem;
   }
-  
+
   .slideDescription {
     font-size: 2.25rem;
   }
-  
+
   .button {
     font-size: 1.5rem;
   }
