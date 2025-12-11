@@ -1,0 +1,222 @@
+/* Hero.module.css */
+.container {
+  padding: 2.5rem 1rem;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.slidesWrapper {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+  height: 18rem; /* Increased */
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: white;
+  max-width: 20rem;
+}
+
+.slideTitle {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.slideSubtitle {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.slideDescription {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button {
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton {
+  background-color: #ef4444;
+  color: white;
+}
+
+.primaryButton:hover {
+  background-color: #fca5a5;
+}
+
+.secondaryButton {
+  background-color: white;
+  color: black;
+}
+
+.secondaryButton:hover {
+  background-color: #d1d5db;
+}
+
+/* Responsive design */
+@media (min-width: 640px) {
+  .container {
+    padding: 3rem 1.5rem;
+  }
+
+  .slidesWrapper {
+    height: 22rem; /* Increased */
+  }
+
+  .textOverlay {
+    top: 2rem;
+    left: 2rem;
+    max-width: 24rem;
+  }
+
+  .slideTitle {
+    font-size: 1.25rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.125rem;
+  }
+
+  .slideDescription {
+    font-size: 1.125rem;
+  }
+
+  .buttonContainer {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .button {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 4rem 2.5rem;
+  }
+
+  .slidesWrapper {
+    height: 28rem; /* Increased */
+  }
+
+  .textOverlay {
+    top: 4rem;
+    left: 4rem;
+    max-width: 28rem;
+  }
+
+  .slideTitle {
+    font-size: 3rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.5rem;
+  }
+
+  .slideDescription {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    font-size: 1.125rem;
+    padding: 0.75rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 2.5rem 6rem;
+  }
+
+  .slidesWrapper {
+    height: 36rem; /* Increased */
+  }
+
+  .textOverlay {
+    top: 6rem;
+    left: 6rem;
+    max-width: 32rem;
+  }
+
+  .slideTitle {
+    font-size: 3.75rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.875rem;
+  }
+
+  .slideDescription {
+    font-size: 1.875rem;
+  }
+
+  .button {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .slidesWrapper {
+    height: 48rem; /* Increased */
+  }
+
+  .textOverlay {
+    top: 6rem;
+    left: 6rem;
+    max-width: 36rem;
+  }
+
+  .slideTitle {
+    font-size: 4.5rem;
+  }
+
+  .slideSubtitle {
+    font-size: 2.25rem;
+  }
+
+  .slideDescription {
+    font-size: 2.25rem;
+  }
+
+  .button {
+    font-size: 1.5rem;
+  }
+}

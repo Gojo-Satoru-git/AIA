@@ -1,37 +1,42 @@
 // Controls.jsx
-import { PauseIcon, PlayIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import {
+  PauseIcon,
+  PlayIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from '@heroicons/react/24/solid';
+import styles from './Controls.module.css';
 
 export default function Controls({ paused, togglePause, goPrev, goNext }) {
   return (
-    <>
+    <div className={styles.controlsContainer}>
       {/* Pause/Play Button */}
       <button
         onClick={togglePause}
-        className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 sm:p-3 md:p-4 rounded-full shadow-md transition"
+        className={`${styles.controlButton} ${styles.pauseButton}`}
       >
         {paused ? (
-          <PlayIcon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-black" />
+          <PlayIcon className={styles.icon} />
         ) : (
-          <PauseIcon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-black" />
+          <PauseIcon className={styles.icon} />
         )}
       </button>
 
       {/* Left Arrow */}
       <button
         onClick={goPrev}
-        className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 sm:p-3 md:p-4 rounded-full shadow-md transition"
+        className={`${styles.controlButton} ${styles.prevButton}`}
       >
-        <ChevronLeftIcon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-black" />
+        <ChevronLeftIcon className={styles.icon} />
       </button>
 
       {/* Right Arrow */}
       <button
         onClick={goNext}
-        className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 sm:p-3 md:p-4 rounded-full shadow-md transition"
+        className={`${styles.controlButton} ${styles.nextButton}`}
       >
-        <ChevronRightIcon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-black" />
+        <ChevronRightIcon className={styles.icon} />
       </button>
-    </>
+    </div>
   );
 }
-  

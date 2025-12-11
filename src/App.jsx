@@ -14,21 +14,24 @@ import GalleryView from './Pages/Gallery/GalleryView';
 
 export default function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/symposium" element={<Symposium />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/people" element={<People />} />
-        <Route path="/placements" element={<Placements />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/achievements" element={<Achievements />} />
-        <Route path="/gallery/:folderTitle" element={<GalleryView />} />
-      </Routes>
-
-      <Footer />
-    </Router>
+    <div className="min-h-screen w-full overflow-x-hidden">
+      <Router>
+        <Header />
+        <main className="relative">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/symposium" element={<Symposium />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/people" element={<People />} />
+            <Route path="/placements" element={<Placements />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/gallery/:folderTitle" element={<GalleryView />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 }

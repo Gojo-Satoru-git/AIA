@@ -1,0 +1,80 @@
+/* Home.module.css */
+.container {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.coursesSection {
+  margin-top: 4rem;
+}
+
+.officersSection {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.coursesTitle {
+  font-weight: bold;
+  font-size: 1.875rem;
+  color: #14532d;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.coursesDescription {
+  color: #14532d;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Responsive typography */
+@media (min-width: 640px) {
+  .coursesTitle {
+    font-size: 2.25rem;
+  }
+  
+  .coursesDescription {
+    font-size: 1.5rem;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .coursesTitle {
+    font-size: 3rem;
+  }
+  
+  .coursesDescription {
+    font-size: 1.875rem;
+    padding: 0 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .coursesTitle {
+    font-size: 3.75rem;
+  }
+  
+  .coursesDescription {
+    font-size: 2.25rem;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .coursesTitle {
+    font-size: 3.75rem;
+  }
+  
+  .coursesDescription {
+    font-size: 2.25rem;
+  }
+}

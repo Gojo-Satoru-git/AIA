@@ -30,7 +30,7 @@ const Achievementcard = ({ achievement, setdetail }) => {
           color: 'white',
         }}
       >
-        <h3 className="header" style={{ fontSize: '150%' }}>
+        <h3 className="header" style={{ color: 'black' }}>
           {achievement.title}
         </h3>
       </div>
