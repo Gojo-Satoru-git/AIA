@@ -6,6 +6,9 @@ const Achievementcard = ({ achievement, setdetail }) => {
       onClick={() => {
         setdetail(achievement);
       }}
+      style={{
+        height: '90%',
+      }}
     >
       <img
         className="image"
@@ -21,6 +24,7 @@ const Achievementcard = ({ achievement, setdetail }) => {
           overflow: 'hidden',
         }}
       />
+
       <div
         className="content"
         style={{
@@ -28,11 +32,22 @@ const Achievementcard = ({ achievement, setdetail }) => {
           flexDirection: 'column',
           alignItems: 'center',
           color: 'white',
+          gap: '10px',
+          padding: '5px',
         }}
       >
         <h3 className="header" style={{ color: 'black' }}>
           {achievement.title}
         </h3>
+        <h4
+          style={{
+            color: 'gray',
+            font: 'initial',
+            fontSize: '1rem',
+          }}
+        >
+          {achievement.description}
+        </h4>
       </div>
     </div>
   );
