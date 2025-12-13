@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -11,7 +11,36 @@ import Symposium from './Pages/Symposium/Symposium';
 import Gallery from './Pages/Gallery/Gallery';
 import Achievements from './Pages/Achievements/Achievements';
 import GalleryView from './Pages/Gallery/GalleryView';
+import { Loading } from './Pages/Home/Homeloading';
+import { PlacementLoading } from './Pages/Placements/Placementloading';
+import { Projectloading } from './Pages/Projects/Projectloading';
+const Homelazy=React.lazy(()=>{
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(import('./Pages/Home/Home'))
 
+    },500);
+  }
+  )
+})
+const Placementlazy=React.lazy(()=>{
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(import('./Pages/Placements/Placements'))
+
+    },500);
+  }
+  )
+})
+const Projectlazy=React.lazy(()=>{
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(import('./Pages/Projects/Projects'))
+
+    },500);
+  }
+  )
+})
 export default function App() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
@@ -19,12 +48,22 @@ export default function App() {
         <Header />
         <main className="relative">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/" element={
+              <Suspense fallback={<Loading/>}>
+                <Homelazy/>
+              </Suspense>
+            } />
+            <Route path="/projects" element={
+              <Suspense fallback={<Projectloading/>}>
+                <Projectlazy/>
+              </Suspense>} />
             <Route path="/symposium" element={<Symposium />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/people" element={<People />} />
-            <Route path="/placements" element={<Placements />} />
+            <Route path="/placements"element={
+              <Suspense fallback={<PlacementLoading/>}>
+                <Placementlazy count="6"/>
+              </Suspense>} />
             <Route path="/events" element={<Events />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/gallery/:folderTitle" element={<GalleryView />} />
